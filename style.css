@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100vw - 2rem);
+    width: 100%;
 }
 
 #menu-options {
@@ -18,7 +18,7 @@ body {
 }
 
 #web-3-image {
-    width: calc(100vw - 2rem);
+    width: 100%;
     height: calc(100vw - 2rem);;
     margin: 2rem 0;
 }
@@ -81,6 +81,16 @@ p {
     border-bottom: 1px solid gray;
     padding-bottom: 2rem;
 
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,26,0.3);
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .top-new-article {
