@@ -12,9 +12,8 @@ closeIcon.classList.add('close-icon');
 
 const menuIcon = document.querySelector('#menu-icon');
 const body = document.querySelector('body');
-
 const menuOptions = document.querySelector('#menu-options')
-
+const header = document.querySelector('header')
 
 
 
@@ -33,11 +32,17 @@ closeIcon.addEventListener('click', ()=>{
 })
 
 function closeHamburgerMenu() {
-    menuOptions.id = 'menu-options';
-    menuOptions.classList.remove('menu-options-hamburger-menu');
-    body.removeChild(modal);
-    modal.removeChild(hamburgerMenu);
-    hamburgerMenu.removeChild(menuOptions);
+    hamburgerMenu.classList.remove('transition-menu')
+    setTimeout(()=>{
+        menuOptions.id = 'menu-options';
+        menuOptions.classList.remove('menu-options-hamburger-menu');
+        hamburgerMenu.removeChild(menuOptions);
+        modal.removeChild(hamburgerMenu);
+        body.removeChild(modal);
+        header.appendChild(menuOptions);
+    },300);
+
+
 }
 
 function openHamburgerMenu() {
@@ -47,4 +52,6 @@ function openHamburgerMenu() {
     menuOptions.id = '';
     menuOptions.classList.add('menu-options-hamburger-menu');
     hamburgerMenu.appendChild(menuOptions);
+    setTimeout(() => {hamburgerMenu.classList.add('transition-menu'); }, 100)
+
 }
